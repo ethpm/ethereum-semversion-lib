@@ -1,0 +1,16 @@
+{
+  "authors": [
+    "Piper Merriam <pipermerriam@gmail.com>"
+  ],
+  "description": "An Ethereum library which implements a struct for representing and comparing semver version numbers",
+  "keywords": [
+    "semver"
+  ],
+  "license": "MIT",
+  "links": {
+    "repository": "https://github.com/pipermerriam/ethereum-semversion-lib"
+  },
+  "manifest_version": "1",
+  "package_name": "sem-version-lib",
+  "version": "1.1.0"
+}

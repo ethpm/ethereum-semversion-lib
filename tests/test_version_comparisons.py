@@ -23,7 +23,7 @@ import semver
     ),
 )
 def test_semver_object_comparisons(chain, left, right, expected):
-    test_semver_lib = chain.get_contract('TestSemVersion')
+    test_semver_lib, _ = chain.store.provider.get_or_deploy_contract('TestSemVersion')
 
     left_ver = semver.parse_version_info(left)
 
@@ -77,11 +77,11 @@ def test_semver_object_comparisons(chain, left, right, expected):
     lt_gas = test_semver_lib.estimateGas().isLesser()
     le_gas = test_semver_lib.estimateGas().isLesserOrEqual()
 
-    assert eq_gas < 40000
-    assert gt_gas < 40000
-    assert ge_gas < 40000
-    assert lt_gas < 40000
-    assert le_gas < 40000
+    assert eq_gas < 45000
+    assert gt_gas < 45000
+    assert ge_gas < 45000
+    assert lt_gas < 45000
+    assert le_gas < 45000
 
 
 @pytest.mark.parametrize(
@@ -104,7 +104,7 @@ def test_semver_object_comparisons(chain, left, right, expected):
     ),
 )
 def test_semver_direct_comparisons(chain, left, right, expected):
-    semver_lib = chain.get_contract('SemVersionLib')
+    semver_lib, _ = chain.store.provider.get_or_deploy_contract('SemVersionLib')
 
     left_ver = semver.parse_version_info(left)
     right_ver = semver.parse_version_info(right)

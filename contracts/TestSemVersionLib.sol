@@ -11,12 +11,12 @@ contract TestSemVersion {
 
     function setA(uint32[3] versionNumbers,
                   string preRelease) public returns (bool) {
-        a.init(versionNumbers, preRelease);
+        a.init(versionNumbers[0], versionNumbers[1], versionNumbers[2], preRelease, '');
     }
 
     function setB(uint32[3] versionNumbers,
                   string preRelease) public returns (bool) {
-        b.init(versionNumbers, preRelease);
+        b.init(versionNumbers[0], versionNumbers[1], versionNumbers[2], preRelease, '');
     }
 
     function getA() constant returns (uint32[3], string) {
